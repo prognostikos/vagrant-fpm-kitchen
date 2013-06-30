@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+sudo apt-get update
+sudo apt-get upgrade -y
+
+sudo apt-get install -y ruby rubygems
+sudo gem install fpm-cookery --no-ri --no-rdoc
+
+cd /vagrant/recipes
+sudo fpm-cook install-deps ruby/2.0.0.rb
+fpm-cook ruby/2.0.0.rb
