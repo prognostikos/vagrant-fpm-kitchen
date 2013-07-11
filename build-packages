@@ -9,5 +9,9 @@ sudo apt-get install -y ruby rubygems
 sudo gem install fpm-cookery --no-ri --no-rdoc
 
 cd /vagrant/recipes
-sudo fpm-cook install-deps ruby/2.0.0.rb
-fpm-cook ruby/2.0.0.rb
+
+for recipe in $(find . -maxdepth 2 -type f -name "*.rb")
+do
+  sudo fpm-cook install-deps "$recipe"
+  fpm-cook "$recipe"
+done
