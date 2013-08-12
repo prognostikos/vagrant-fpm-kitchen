@@ -10,6 +10,10 @@ class Tmux < FPM::Cookery::Recipe
   conflicts 'tmux'
   replaces  'tmux'
 
+  build_depends 'autoconf', 'libevent-dev', 'libncurses5-dev'
+
+  depends 'libevent-2.0-5', 'libncurses5'
+
   def build
     configure :prefix => prefix
     make
