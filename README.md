@@ -49,5 +49,5 @@ Build and package ruby 2.0.0:
 
     cd recipes
     sudo fpm-cook install-deps ruby/2.0.0.rb
-    fpm-cook ruby/2.0.0.rb
+    fpm-cook package ruby/2.0.0.rb
 

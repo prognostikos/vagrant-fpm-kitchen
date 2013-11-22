@@ -13,5 +13,5 @@ cd /vagrant/recipes
 for recipe in $(find . -maxdepth 2 -type f -name "*.rb")
 do
   sudo fpm-cook install-deps "$recipe"
-  fpm-cook "$recipe"
+  fpm-cook package "$recipe"
 done
